@@ -3,6 +3,6 @@
     require_once __DIR__ . '/../scripts/user-database.php';
 ?>
 
-<header>
+<header class="position-fixed d-flex align-items-center">
         <?= $client->getFullName(); ?>
 </header>

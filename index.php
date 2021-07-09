@@ -31,31 +31,32 @@
 
         <!-- MAIN -->
         <main>
-            <div class="container">
+            <div class="container d-flex justify-content-center">
                 <?php foreach ($products as $product) { ?>
-                    <?php $article = new Product($product["name"], $product["price"], $product["description"], $product["vote"], $product["reviews_number"], $product["expedition_price"]); ?>
-                    <div class="article_card">
+                    <?php $article = new Product($product["name"], $product["price"], $product["image"], $product["description"], $product["vote"], $product["reviews_number"], $product["expedition_price"]); ?>
+                    <a href="#" class="article_card text-center">
                         <ul>
+                            <li>
+                                <img src="<?= $article->getImage(); ?>" alt="<?= $article->getName(); ?>">
+                            </li>
                             <li>
                                 <?= $article->getName(); ?>
                             </li>
                             <li>
-                                <?= $article->getDescription(); ?>
+                                <?php if($article->getVote() != 0 && $article->getReviewsNumber() != 0) { ?>
+                                    Voto: <?= $article->getVote(); ?>/5  <span><?= $article->getReviewsNumber(); ?></span>
+                                <?php } ?>
                             </li>
                             <li>
-                                <?= $article->getVote(); ?>
+                                €<?= $client->getDiscount($article->getPrice()) ?>
                             </li>
                             <li>
-                                <?= $article->getReviewsNumber(); ?>
-                            </li>
-                            <li>
-                                <?= $client->getDiscount($article->getPrice()) ?>
-                            </li>
-                            <li>
-                                <?= $article->getExpeditionPrice(); ?>
+                                <?php if($article->getExpeditionPrice() != 0) { ?>
+                                    Costo di spedizione: €<?= $article->getExpeditionPrice(); ?>
+                                <?php } ?>
                             </li>
                         </ul>
-                    </div>
+                    </a>
                 <?php } ?>
             </div>
         </main>
