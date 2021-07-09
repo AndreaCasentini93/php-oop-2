@@ -4,8 +4,8 @@
         private $name;
         private $surname;
         private $address;
-        private $age;
         private $fiscal_code;
+        protected $age;
 
         public function __construct($name, $surname, $address, $age) {
             $this->name = $name;

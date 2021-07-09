@@ -1,6 +1,4 @@
 <?php
-    require_once __DIR__ . '/classes/Product.php';
-    require_once __DIR__ . '/classes/Client.php';
     require_once __DIR__ . '/scripts/products-database.php';
     require_once __DIR__ . '/scripts/user-database.php';
 ?>
@@ -36,23 +34,25 @@
             <div class="container">
                 <?php foreach ($products as $product) { ?>
                     <?php $article = new Product($product["name"], $product["price"], $product["description"], $product["vote"], $product["expedition_price"]); ?>
-                    <ul>
-                        <li>
-                            <?= $article->name; ?>
-                        </li>
-                        <li>
-                            <?= $article->description; ?>
-                        </li>
-                        <li>
-                            <?= $article->vote; ?>
-                        </li>
-                        <li>
-                            <?= $article->price; ?>
-                        </li>
-                        <li>
-                            <?= $article->expedition_price; ?>
-                        </li>
-                    </ul>
+                    <div class="article_card">
+                        <ul>
+                            <li>
+                                <?= $article->getName(); ?>
+                            </li>
+                            <li>
+                                <?= $article->getDescription(); ?>
+                            </li>
+                            <li>
+                                <?= $article->getVote(); ?>
+                            </li>
+                            <li>
+                                <?= $client->getDiscount($article->getPrice()) ?>
+                            </li>
+                            <li>
+                                <?= $article->getExpeditionPrice(); ?>
+                            </li>
+                        </ul>
+                    </div>
                 <?php } ?>
             </div>
         </main>

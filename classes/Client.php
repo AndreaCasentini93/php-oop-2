@@ -14,8 +14,12 @@
         }
 
         public function getDiscount($price) {
-            if ($this->age >=60) {
-                return $price = ($price * 20) / 100;
+            if ($this->age >= 60) {
+                return round($price = ($price * 25) / 100, 2);
+            } elseif($this->age < 18) {
+                return round($price = ($price * 10) / 100, 2);
+            } else {
+                return round($price, 2);
             }
         }
     }
