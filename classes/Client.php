@@ -4,15 +4,19 @@
     class Client extends Person {
         private $username;
         private $email;
+        private $password;
 
-        public function __construct($name, $surname, $username = "Utente" , $address, $email, $age = "") {
-            parent::__construct($name, $surname, $address, $age = "");
+        public function __construct($name, $surname, $username = "Utente" , $address, $email, $password, $age) {
+            parent::__construct($name, $surname, $address, $age);
             $this->username = $username;
             $this->email = $email;
+            $this->password = $password;
+        }
+
+        public function getDiscount($price) {
+            if ($this->age >=60) {
+                return $price = ($price * 20) / 100;
+            }
         }
     }
-
-    $client = new Client ("Pinco", "Pallino", "PincoPallo", "Via Vecchia 19", "pincopallo@email.com");
-    var_dump($client);
-
 ?>

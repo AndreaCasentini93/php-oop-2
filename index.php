@@ -1,7 +1,8 @@
 <?php
-    include_once __DIR__ . '/classes/Product.php';
-    include_once __DIR__ . '/classes/Client.php';
-
+    require_once __DIR__ . '/classes/Product.php';
+    require_once __DIR__ . '/classes/Client.php';
+    require_once __DIR__ . '/scripts/product-database.php';
+    require_once __DIR__ . '/scripts/user-database.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +27,11 @@
     </head>
 
     <body>
-        
+        <!-- HEADER -->
+        <?php include_once __DIR__ . '/partials/header.php'; ?>
+        <!-- /HEADER -->
+
+        <!-- MAIN -->
+        <!-- /MAIN -->
     </body>
 </html>

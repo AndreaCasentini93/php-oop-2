@@ -7,7 +7,7 @@
         private $age;
         private $fiscal_code;
 
-        public function __construct($name, $surname, $address, $age = "") {
+        public function __construct($name, $surname, $address, $age) {
             $this->name = $name;
             $this->surname = $surname;
             $this->address = $address;
