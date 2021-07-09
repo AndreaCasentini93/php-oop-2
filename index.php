@@ -10,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- FAVICON -->
-        <link rel="shortcut icon" href="" type="image/x-icon">
+        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
         <!-- GOOGLE FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,23 +34,23 @@
             <div class="container d-flex justify-content-center">
                 <?php foreach ($products as $product) { ?>
                     <?php $article = new Product($product["name"], $product["price"], $product["image"], $product["description"], $product["vote"], $product["reviews_number"], $product["expedition_price"]); ?>
-                    <a href="#" class="article_card text-center">
+                    <a href="<?= $article->getUrl(); ?>" class="article_card text-center">
                         <ul>
-                            <li>
+                            <li class="article_img">
                                 <img src="<?= $article->getImage(); ?>" alt="<?= $article->getName(); ?>">
                             </li>
-                            <li>
+                            <li class="article_name">
                                 <?= $article->getName(); ?>
                             </li>
-                            <li>
+                            <li class="article_vote d-flex justify-content-center align-items-center">
                                 <?php if($article->getVote() != 0 && $article->getReviewsNumber() != 0) { ?>
-                                    Voto: <?= $article->getVote(); ?>/5  <span><?= $article->getReviewsNumber(); ?></span>
+                                    Voto <?= $article->getVote(); ?>/5  <span><?= $article->getReviewsNumber(); ?> persone</span>
                                 <?php } ?>
                             </li>
-                            <li>
+                            <li class="article_price">
                                 €<?= $client->getDiscount($article->getPrice()) ?>
                             </li>
-                            <li>
+                            <li class="article_expedition_price">
                                 <?php if($article->getExpeditionPrice() != 0) { ?>
                                     Costo di spedizione: €<?= $article->getExpeditionPrice(); ?>
                                 <?php } ?>

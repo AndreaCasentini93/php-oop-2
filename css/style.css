@@ -17,19 +17,51 @@ ul {
 .article_card {
     width: calc((100% / 4) - 20px);
     padding: 20px;
+    border-radius: 8px;
     margin: 10px;
     text-decoration: none;
-    color: #000000;
-    background-color: red;
+    color: #131921;;
+    background-color: #FFFFFF;
+    box-shadow: inset 0 0 15px 1px #808080;
+    transition: transform .3s;
 }
-
 .article_card:hover {
     color: #000000;
+    transform: scale(1.05);
+}
+
+.article_card li:not(:last-child) {
+    margin-bottom: 5px;
 }
 
 .article_card img {
     display: block;
     width: 100%;
+    margin-bottom: 10px;
+}
+.article_card .article_name {
+    font-size: 18px;
+    font-weight: 700;
+    padding-bottom: 15px;
+}
+.article_card .article_vote {
+    font-size: 15px;
+    font-weight: 500;
+}
+.article_card .article_vote span {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #808080;
+}
+.article_card .article_price {
+    font-size: 17px;
+    font-weight: 700;
+    color: #E67A00;
+}
+.article_card .article_expedition_price {
+    font-size: 12px;
+    color: #131921;
 }
 
 /* HEADER */
@@ -38,11 +70,25 @@ header {
     left: 0;
     width: 100%;
     height: 90px;
-    background-color: blue;
+    padding: 0 50px;
+    color: #FFFFFF;
+    background-color: #131921;
+}
+header img {
+    width: 150px;
+}
+header a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+header a:hover {
+    color: #E67A00;
 }
 
 /* MAIN */
 main {
+    min-height: calc(100vh - 90px);
     padding: 50px 0;
     margin-top: 90px;
+    background-color: #406164;
 }
