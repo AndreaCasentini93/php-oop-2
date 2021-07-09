@@ -4,5 +4,5 @@
 ?>
 
 <header>
-        <?= $client->getFullName() ?>
+        <?= $client->getFullName(); ?>
 </header>
