@@ -19,7 +19,7 @@
         }
 
         public function getFullName() {
-            return $this->name . $this->surname;
+            return $this->name . " " . $this->surname;
         }
     }
 

@@ -4,5 +4,5 @@
 ?>
 
 <header>
-        <?php var_dump($client); ?>
+        <?= $client->getFullName(); ?>
 </header>

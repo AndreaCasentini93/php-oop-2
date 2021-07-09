@@ -13,6 +13,6 @@
     ];
 
     $client = new Client($user["name"], $user["surname"], $user["username"], $user["address"], $user["email"],$user["password"] , $user["age"]);
-    $client->setFiscalCode($user["fiscal_code"])
+    $client->setFiscalCode($user["fiscal_code"]);
 
 ?>
