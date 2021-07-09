@@ -12,4 +12,7 @@
         }
     }
 
+    $client = new Client ("Pinco", "Pallino", "PincoPallo", "Via Vecchia 19", "pincopallo@email.com");
+    var_dump($client);
+
 ?>
