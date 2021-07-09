@@ -7,11 +7,14 @@
         private $age;
         private $fiscal_code;
 
-        public function __construct($name, $surname, $address, $age = "", $fiscal_code = "") {
+        public function __construct($name, $surname, $address, $age = "") {
             $this->name = $name;
             $this->surname = $surname;
             $this->address = $address;
             $this->age = $age;
+        }
+
+        public function setFiscalCode($fiscal_code) {
             $this->fiscal_code = $fiscal_code;
         }
 
