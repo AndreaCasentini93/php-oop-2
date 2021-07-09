@@ -9,10 +9,12 @@
         "email" => "andrea.casentini@email.com",
         "password" => "abcdefg123456",
         "age" => 28,
-        "fiscal_code" => "CSNNDR93B23L719H"
+        "fiscal_code" => "CSNNDR93B23L719H",
+        "credit_card" => "XXXXXXX"
     ];
 
     $client = new Client($user["name"], $user["surname"], $user["username"], $user["address"], $user["email"],$user["password"] , $user["age"]);
     $client->setFiscalCode($user["fiscal_code"]);
+    $client->setCreditCard($user["credit_card"]);
 
 ?>
