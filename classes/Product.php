@@ -7,7 +7,6 @@
         private $vote;
         private $reviews_number;
         private $expedition_price;
-        private $url;
 
         public function __construct($name, $price, $image, $description = "", $vote = 0, $reviews_number = 0, $expedition_price = 0) {
             $this->name = $name;
