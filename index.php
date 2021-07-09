@@ -52,7 +52,7 @@
                             </li>
                             <li class="article_expedition_price">
                                 <?php if($article->getExpeditionPrice() != 0) { ?>
-                                    Costo di spedizione: €<?= $article->getExpeditionPrice(); ?>
+                                    Costo di spedizione €<?= $article->getExpeditionPrice(); ?>
                                 <?php } ?>
                             </li>
                         </ul>
