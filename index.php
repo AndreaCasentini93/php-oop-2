@@ -33,7 +33,7 @@
         <main>
             <div class="container">
                 <?php foreach ($products as $product) { ?>
-                    <?php $article = new Product($product["name"], $product["price"], $product["description"], $product["vote"], $product["expedition_price"]); ?>
+                    <?php $article = new Product($product["name"], $product["price"], $product["description"], $product["vote"], $product["reviews_number"], $product["expedition_price"]); ?>
                     <div class="article_card">
                         <ul>
                             <li>
@@ -44,6 +44,9 @@
                             </li>
                             <li>
                                 <?= $article->getVote(); ?>
+                            </li>
+                            <li>
+                                <?= $article->getReviewsNumber(); ?>
                             </li>
                             <li>
                                 <?= $client->getDiscount($article->getPrice()) ?>
