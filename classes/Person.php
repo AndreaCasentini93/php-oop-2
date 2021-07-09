@@ -18,15 +18,6 @@
         public function getFullName() {
             return $this->name . $this->surname;
         }
-        public function getAge() {
-            return $this->age;
-        }
-        public function getFiscalCode() {
-            return $this->fiscal_code;
-        }
-        public function getAddress() {
-            return $this->address;
-        }
     }
 
 ?>

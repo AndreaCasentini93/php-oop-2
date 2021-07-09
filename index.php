@@ -1,3 +1,9 @@
+<?php
+    include_once __DIR__ . '/classes/Product.php';
+    include_once __DIR__ . '/classes/Client.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,6 +26,6 @@
     </head>
 
     <body>
-        Prova
+        
     </body>
 </html>
