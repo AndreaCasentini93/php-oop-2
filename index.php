@@ -31,9 +31,15 @@
 
         <!-- MAIN -->
         <main>
-            <div class="container d-flex justify-content-center">
+            <div class="container d-flex justify-content-center flex-wrap">
                 <?php foreach ($products as $product) { ?>
-                    <?php $article = new Product($product["name"], $product["price"], $product["image"], $product["description"], $product["vote"], $product["reviews_number"], $product["expedition_price"]); ?>
+                    <?php
+                        if ($product["genre"] == "clothing") {
+                            $article = new ProductClothing($product["name"], $product["price"], $product["image"], $product["description"], $product["vote"], $product["reviews_number"], $product["expedition_price"], $product["color"], $product["size"], $product["season"]);
+                        } elseif($product["genre"] == "sport") {
+                            $article = new ProductSport($product["name"], $product["price"], $product["image"], $product["description"], $product["vote"], $product["reviews_number"], $product["expedition_price"], $product["weight"], $product["color"], $product["materials"]);
+                        }
+                    ?>
                     <a href="<?= $article->getUrl(); ?>" class="article_card text-center">
                         <ul>
                             <li class="article_img">
